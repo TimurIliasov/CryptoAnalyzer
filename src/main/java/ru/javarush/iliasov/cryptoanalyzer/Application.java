@@ -15,11 +15,13 @@ public class Application {
     }
 
     public Result run(String[] args) {
-        if (args.length > 0) {
+        if (args.length==0){
+            throw new AppExceptions("no args");
+        }
+
             String action = args[0];
             String[] parameters = Arrays.copyOfRange(args, 1, args.length);
-            Result result = mainController.doAction(action, parameters);
-        }
-        throw new AppExceptions();
+        Result result = mainController.doAction(action, parameters);
+        return result;
     }
 }

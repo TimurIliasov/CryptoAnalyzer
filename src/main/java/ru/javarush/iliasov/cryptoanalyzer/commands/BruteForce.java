@@ -3,9 +3,9 @@ package ru.javarush.iliasov.cryptoanalyzer.commands;
 import ru.javarush.iliasov.cryptoanalyzer.entity.Result;
 import ru.javarush.iliasov.cryptoanalyzer.entity.ResultCode;
 
-public class Encoder implements Action{
+public class BruteForce implements Action{
     @Override
     public Result execute(String[] parameters) {
-        return new Result("encode all right", ResultCode.OK);
+        return new Result("BruteForce completed", ResultCode.OK);
     }
 }
