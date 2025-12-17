@@ -4,6 +4,7 @@ import ru.javarush.iliasov.cryptoanalyzer.controllers.MainController;
 import ru.javarush.iliasov.cryptoanalyzer.entity.Result;
 import ru.javarush.iliasov.cryptoanalyzer.exceptions.AppExceptions;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Application {
@@ -14,7 +15,7 @@ public class Application {
 
     }
 
-    public Result run(String[] args) {
+    public Result run(String[] args) throws IOException {
         if (args.length==0){
             throw new AppExceptions("no args");
         }

@@ -1,12 +1,13 @@
 package ru.javarush.iliasov.cryptoanalyzer.controllers;
 
 import ru.javarush.iliasov.cryptoanalyzer.commands.Action;
+import ru.javarush.iliasov.cryptoanalyzer.commands.BruteForce;
 import ru.javarush.iliasov.cryptoanalyzer.commands.Decoder;
 import ru.javarush.iliasov.cryptoanalyzer.commands.Encoder;
 import ru.javarush.iliasov.cryptoanalyzer.exceptions.AppExceptions;
 
 public enum ActionFactory {
-    ENCODE(new Encoder()), DECODE(new Decoder());
+    ENCODE(new Encoder()), DECODE(new Decoder()), BRUTEFORCE(new BruteForce());
 
     private final Action action;
 
