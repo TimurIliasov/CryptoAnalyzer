@@ -11,7 +11,7 @@ public class Cipher {
                 result.append(Constants.rus.charAt((index+key)%Constants.rus.length()));
             } else if (Constants.eng.indexOf(ch)>=0) {
                 int index = Constants.eng.indexOf(ch);
-                result.append(Constants.rus.charAt((index+key)%Constants.eng.length()));
+                result.append(Constants.eng.charAt((index+key)%Constants.eng.length()));
             }else {
                 result.append(ch);
             }
