@@ -5,8 +5,8 @@ public class BFLogic {
         text=text.toUpperCase();
         int bestScore = 0;
         String bestResult = null;
-
-        for (int key = 0; key <Math.max(Constants.rus.length(), Constants.eng.length()) ; key++) {
+        String[] alphabets = {Constants.rus, Constants.eng};
+        for (int key = 0; key < alphabets.length; key++) {
             String decryptedBrute = DeCipher.decrypt(text,key);
             int score = scoreText(decryptedBrute);
 
@@ -15,6 +15,7 @@ public class BFLogic {
                 bestResult = decryptedBrute;
             }
         }
+
         return bestResult!=null? bestResult:"Не удалось расшифровать текст";
     }
 
