@@ -22,7 +22,7 @@ public class Analyzer implements Action {
             AnalyzeLogic.AnalyzeResult analyzeResult = AnalyzeLogic.analyze(encryptedText);
             int decryptKey = analyzeResult.alphabet().length() - analyzeResult.key();
 
-            String decrypted = Cipher.encrypt(encryptedText, decryptKey);
+            String decrypted = Cipher.encrypt(encryptedText, decryptKey, analyzeResult.alphabet());
             Files.writeString(Path.of(analyzedFile), decrypted);
 
             return new Result("File analyzed. Key: " + analyzeResult.key(), ResultCode.OK);

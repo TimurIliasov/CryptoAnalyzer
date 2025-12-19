@@ -6,16 +6,17 @@ public class BFLogic {
         int bestScore = 0;
         String bestResult = null;
         String[] alphabets = {Constants.rus, Constants.eng};
-        for (int key = 0; key < alphabets.length; key++) {
-            String decryptedBrute = DeCipher.decrypt(text,key);
-            int score = scoreText(decryptedBrute);
+        for (String alphabet:alphabets) {
+            for (int key = 0; key < alphabet.length(); key++) {
+                String decryptedBrute = DeCipher.decrypt(text, key, alphabet);
+                int score = scoreText(decryptedBrute);
 
-            if (score>bestScore){
-                bestScore = score;
-                bestResult = decryptedBrute;
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestResult = decryptedBrute;
+                }
             }
         }
-
         return bestResult!=null? bestResult:"Не удалось расшифровать текст";
     }
 
